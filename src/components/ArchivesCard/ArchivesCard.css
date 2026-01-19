@@ -1,0 +1,91 @@
+.card {
+  border: 1px solid #3a3450;
+  padding: 16px 18px;
+  border-radius: 8px;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.15s ease;
+}
+
+.card:hover {
+  background-color: rgba(58, 52, 80, 0.3);
+  border-color: #c084fc;
+}
+
+.card__open {
+  background-color: rgba(58, 52, 80, 0.3);
+  border-color: #c084fc;
+}
+
+.card__title {
+  font-size: 22px;
+  background: linear-gradient(180deg, #c084fc 0%, #e5e5e5 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+}
+
+.card__preview {
+  opacity: 0.8;
+  color: #cfcfcf;
+  line-height: 1.5;
+}
+
+.card__content {
+  margin-top: 15px;
+  color: #e5e5e5;
+  line-height: 1.5;
+}
+
+.card__definition {
+  margin-bottom: 18px;
+}
+
+.card__section {
+  margin-top: 20px;
+}
+
+.card__section-title {
+  font-size: 16px;
+  color: #c084fc;
+  margin-bottom: 6px;
+}
+
+.card__section-definition {
+  color: #e5e5e5;
+}
+
+.card__related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card__related-btn {
+  background-color: transparent;
+  border-radius: 6px;
+  padding: 6px 10px;
+  border: 1px solid #3a3450;
+  color: rgb(180, 170, 200);
+}
+
+.card__related-btn:hover {
+  background-color: #3a3450;
+  border-color: #c084fc;
+}
+
+.card__themes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card__theme {
+  background-color: #2f2b3d;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #e5e5e5;
+}

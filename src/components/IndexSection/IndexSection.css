@@ -1,0 +1,65 @@
+.index {
+  padding: 0 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.index__group {
+  margin-bottom: 40px;
+}
+
+.index__title {
+  font-size: 28px;
+  background: linear-gradient(180deg, #c084fc 0%, #e5e5e5 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 6px;
+}
+
+.index__subtitle {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+.index__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.index__btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  background-color: transparent;
+  color: rgb(180, 170, 200);
+  border: 1px solid #3a3450;
+}
+
+.index__btn.active {
+  background-color: #3a3450;
+  border-color: #c084fc;
+  color: #e5e5e5;
+}
+
+.index__btn-alpha {
+  width: 40px;
+  padding: 8px 0;
+}
+
+.index__btn-alpha.active {
+  background-color: #3a3450;
+  border-color: #c084fc;
+  color: #e5e5e5;
+}
+
+.index__divider {
+  width: 100%;
+  height: 1px;
+  background-color: #3a3450;
+  margin: 30px 0;
+  opacity: 0.4;
+}
