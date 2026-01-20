@@ -1,7 +1,7 @@
 import { forwardRef, useState, useEffect } from "react";
 
 import "./ArchivesCard.css";
-import { archiveEntries } from "../archivesData.js";
+import { archiveEntries } from "../../utils/archivesData.js";
 
 const ArchivesCard = forwardRef(function ArchivesCard(
   { entry, isOpen, relatedTerm },

@@ -6,7 +6,7 @@ import IndexSection from "../IndexSection/IndexSection.jsx";
 import Archives from "../Archives/Archives.jsx";
 import Footer from "../Footer/Footer.jsx";
 
-import { archiveEntries } from "../archivesData.js";
+import { archiveEntries } from "../../utils/archivesData.js";
 
 export default function Main() {
   const [search, setSearch] = useState("");

@@ -5,7 +5,7 @@ import { Sparkles } from "lucide-react";
 import "./Header.css";
 import Preloader from "../Preloader/Preloader.jsx";
 import { getWeather, filterWeatherData } from "../../utils/WeatherApi.js";
-import { quotes, fallbackQuote } from "../Quotes.js";
+import { quotes, fallbackQuote } from "../../utils/Quotes.js";
 
 export default function Header({ search, setSearch, randomCard }) {
   const [weather, setWeather] = useState(null);

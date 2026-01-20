@@ -10,17 +10,25 @@ export default function Navigation({
 }) {
   return (
     <nav className="navigation">
-      <Link to="/">Home</Link>
+      <Link className="navigation__link" to="/">
+        Home
+      </Link>
       <Link to="/books">Books</Link>
       {currentUser ? (
         <>
-          <span>Hello {currentUser.name}</span>
-          <button onClick={onLogout}>Logout</button>
+          <span className="navigation__name">Hello {currentUser.name}</span>
+          <button className="navigation__modal" onClick={onLogout}>
+            Logout
+          </button>
         </>
       ) : (
         <>
-          <button onClick={onLoginOpen}>Login</button>
-          <button onClick={onRegisterOpen}>Sign Up</button>
+          <button className="navigation__modal" onClick={onLoginOpen}>
+            Login
+          </button>
+          <button className="navigation__modal" onClick={onRegisterOpen}>
+            Sign Up
+          </button>
         </>
       )}
     </nav>

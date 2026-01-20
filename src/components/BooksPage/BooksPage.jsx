@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Sparkles } from "lucide-react";
 
 import "./BooksPage.css";
-import { adultBooks, kidsBooks } from "../books.js";
+import { adultBooks, kidsBooks } from "../../utils/books.js";
 import Footer from "../Footer/Footer.jsx";
 
 export default function BooksPage() {
