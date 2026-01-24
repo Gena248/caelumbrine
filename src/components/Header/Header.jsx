@@ -4,7 +4,11 @@ import { Sparkles } from "lucide-react";
 
 import "./Header.css";
 import Preloader from "../Preloader/Preloader.jsx";
-import { getWeather, filterWeatherData } from "../../utils/WeatherApi.js";
+import {
+  filterWeatherData,
+  getLocation,
+  getWeather,
+} from "../../utils/WeatherApi.js";
 import { quotes, fallbackQuote } from "../../utils/Quotes.js";
 
 export default function Header({ search, setSearch, randomCard }) {
@@ -14,9 +18,7 @@ export default function Header({ search, setSearch, randomCard }) {
   useEffect(() => {
     async function loadWeather() {
       try {
-        const locRes = await fetch("https://geolocation-db.com/json/");
-        const locData = await locRes.json();
-
+        const locData = await getLocation();
         const latitude = locData.latitude;
         const longitude = locData.longitude;
         const apiKey = import.meta.env.VITE_WEATHER_API_KEY;

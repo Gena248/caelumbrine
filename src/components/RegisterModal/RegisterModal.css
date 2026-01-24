@@ -1,4 +1,12 @@
-.signup {
+.register__label {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.register__error {
+  color: blue;
+  font-size: 14px;
+  display: block;
 }

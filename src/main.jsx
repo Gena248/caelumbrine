@@ -7,7 +7,7 @@ import App from "./components/App/App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/caelumbrine">
       <App />
     </BrowserRouter>
   </StrictMode>,

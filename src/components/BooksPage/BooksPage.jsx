@@ -5,7 +5,7 @@ import "./BooksPage.css";
 import { adultBooks, kidsBooks } from "../../utils/books.js";
 import Footer from "../Footer/Footer.jsx";
 
-export default function BooksPage() {
+export default function BooksPage({ onSaveBook, currentUser }) {
   return (
     <section className="books">
       <Link to="/" className="books__logo">
@@ -23,6 +23,13 @@ export default function BooksPage() {
               <h4 className="books__card-title">{book.title}</h4>
               <p className="books__card-description">{book.description}</p>
               <p className="books__card-year">{book.year}</p>
+              <button
+                className="books__card-like-btn"
+                disabled={!currentUser}
+                onClick={() => onSaveBook(book)}
+              >
+                Save
+              </button>
             </div>
           ))}
         </div>

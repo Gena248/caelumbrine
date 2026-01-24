@@ -16,7 +16,9 @@ export default function Navigation({
       <Link to="/books">Books</Link>
       {currentUser ? (
         <>
-          <span className="navigation__name">Hello {currentUser.name}</span>
+          <Link to="/profile" className="navigation__name">
+            Hello {currentUser.name}
+          </Link>
           <button className="navigation__modal" onClick={onLogout}>
             Logout
           </button>

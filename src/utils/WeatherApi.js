@@ -10,3 +10,15 @@ export const filterWeatherData = (data) => {
 
   return result;
 };
+
+export function checkResponse(res) {
+  if (!res.ok) {
+    throw new Error("API error: ${res.status}");
+  }
+  return res.json();
+}
+
+export async function getLocation() {
+  const res = await fetch("https://geolocation-db.com/json/");
+  return checkResponse(res);
+}

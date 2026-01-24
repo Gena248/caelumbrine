@@ -6,13 +6,19 @@ import BooksPage from "../BooksPage/BooksPage.jsx";
 import Navigation from "../Navigation/Navigation.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
+import Profile from "../Profile/Profile.jsx";
 
 import { login, register, checkToken, logout } from "../../utils/backend.js";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.jsx";
 
 export default function App() {
   const [isLoginOpen, setLoginOpen] = useState(false);
   const [isRegisterOpen, setRegisterOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
+  const [savedBooks, setSavedBooks] = useState(() => {
+    const books = localStorage.getItem("savedBooks");
+    return books ? JSON.parse(books) : [];
+  });
 
   useEffect(() => {
     async function loadUser() {
@@ -26,15 +32,18 @@ export default function App() {
     loadUser();
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("savedBooks", JSON.stringify(savedBooks));
+  }, [savedBooks]);
+
   async function handleLogin(email, password) {
     const userInfo = await login(email, password);
 
     if (userInfo.authorized) {
       setCurrentUser(userInfo.user);
       setLoginOpen(false);
-    } else {
-      alert(userInfo.message);
     }
+    return userInfo;
   }
 
   async function handleRegister(name, email, password) {
@@ -43,14 +52,24 @@ export default function App() {
     if (userInfo.authorized) {
       setRegisterOpen(false);
       alert("Registeration successful. Please log in.");
-    } else {
-      alert(userInfo.message);
     }
+    return userInfo;
   }
 
   function handleLogout() {
     logout();
     setCurrentUser(null);
+  }
+
+  function handleSaveBook(book) {
+    setSavedBooks((prev) => {
+      if (prev.some((b) => b.title === book.title)) return prev;
+      return [...prev, book];
+    });
+  }
+
+  function handleDeleteBook(title) {
+    setSavedBooks((prev) => prev.filter((b) => b.title !== title));
   }
 
   return (
@@ -64,11 +83,32 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/books" element={<BooksPage />} />
+        <Route
+          path="/books"
+          element={
+            <BooksPage onSaveBook={handleSaveBook} currentUser={currentUser} />
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute loggedIn={!!currentUser}>
+              <Profile
+                currentUser={currentUser}
+                savedBooks={savedBooks}
+                onDeleteBook={handleDeleteBook}
+              />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
 
       {isLoginOpen && (
-        <LoginModal onClose={() => setLoginOpen(false)} onLogin={handleLogin} />
+        <LoginModal
+          onClose={() => setLoginOpen(false)}
+          onLogin={handleLogin}
+          currentUser={currentUser}
+        />
       )}
 
       {isRegisterOpen && (
