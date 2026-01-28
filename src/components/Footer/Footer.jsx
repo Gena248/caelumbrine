@@ -1,5 +1,4 @@
 import "./Footer.css";
-import Navigation from "../Navigation/Navigation";
 
 export default function Footer() {
   return (

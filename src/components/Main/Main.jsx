@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import Navigation from "../Navigation/Navigation.jsx";
 import Header from "../Header/Header.jsx";
 import IndexSection from "../IndexSection/IndexSection.jsx";
 import Archives from "../Archives/Archives.jsx";
