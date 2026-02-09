@@ -1,0 +1,27 @@
+.archives {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.archives__title {
+  font-size: 32px;
+  background: linear-gradient(180deg, #c084fc 0%, #e5e5e5 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.archives__count {
+  text-align: center;
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+
+.archives__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
