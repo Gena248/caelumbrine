@@ -37,6 +37,7 @@
   margin-top: 15px;
   color: #e5e5e5;
   line-height: 1.5;
+  white-space: pre-line;
 }
 
 .card__definition {

@@ -47,8 +47,12 @@ const ArchivesCard = forwardRef(function ArchivesCard(
           </div>
 
           <div className="card__section">
-            <h4 className="card__section-title">Ritual Context</h4>
-            <p className="card__section-definition">{entry.ritualContext}</p>
+            <h4 className="card__section-title">
+              {entry.ritualContext ? "Ritual Context" : "Key Features"}
+            </h4>
+            <p className="card__section-definition">
+              {entry.ritualContext || entry.keyFeatures}
+            </p>
           </div>
 
           <div className="card__section">

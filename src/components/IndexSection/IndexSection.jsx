@@ -9,6 +9,11 @@ export default function IndexSection({ theme, setTheme, letter, setLetter }) {
     "Dreams",
     "Symbols",
     "Weapons",
+    "Location Feature",
+    "Power",
+    "Artifact",
+    "Environmental",
+    "Phenomenon",
   ];
   const alaphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
